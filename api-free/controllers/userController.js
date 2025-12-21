@@ -16,4 +16,19 @@ const updatePreferences = async (req, res) => {
     
 }
 
-module.exports = {updatePreferences};
+const getPreferences = async (req, res) => {
+    const userId = req.user.id;
+    
+    try {
+        const {group, preferences} = await User.findById(userId);
+
+        res.json({ message : "Préférences envoyées", 
+            group: group,
+            preferences: preferences 
+        })
+    } catch (error) {
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
+    }
+}
+
+module.exports = {updatePreferences, getPreferences};
