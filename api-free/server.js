@@ -4,6 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const freeRoutes = require('./routes/free');
 
 connectDB();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/free', freeRoutes);
 
 app.get('/', (req, res) => {
     res.send('Bienvenue sur l\'API!');
