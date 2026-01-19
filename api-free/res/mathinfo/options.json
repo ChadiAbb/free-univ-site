@@ -1,63 +1,72 @@
 {
-    "E045" :
+    "Linguisitique" :
         {
-            "name" : "Linguisitique",
+            "name" : "Linguistique (IFA6E045)",
+            "groups" : "E045",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Thursday"]]
         },
-    "E055" :
+    "Cryptographie" :
         {
-            "name" : "Cryptographie",
+            "name" : "Cryptographie (IFA6E055)",
+            "groups" : "E055",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Monday"]]
         },
-    "E065" :
+    "Introduction au Genie Logiciel" :
         {
-            "name" : "Introduction au Genie Logiciel",
+            "name" : "Introduction au Genie Logiciel (IFA6E065)",
+            "groups" : "E065",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Monday"],["Thursday"]]
         },
-    "E085" :
+    "Programmation Efficace" :
         {
-            "name" : "Programmation Efficace",
+            "name" : "Programmation Efficace (IFA6E085)",
+            "groups" : "E085",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Tuesday"],["Friday"]]
         },
-    "E095" :
+    "Programmation Web" :
         {
-            "name" : "Programmation Web",
+            "name" : "Programmation Web (IFA6E095)",
+            "groups" : "E095",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Monday"],["Wednesday"],["Friday"]]
         },
-    "E105" :
+    "Securite Informatique" :
         {
-            "name" : "Securite Informatique",
+            "name" : "Securite Informatique (IFA6E105)",
+            "groups" : "E105",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Monday"],["Tuesday"],["Friday"]]
         },
-    "E135" :
+    "Initiation au Langage Rust" :
         {
-            "name" : "Initiation au Langage Rust",
+            "name" : "Initiation au Langage Rust (IFA6E135)",
+            "groups" : "E135",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Tuesday"],["Wednesday"]]
         },
-    "E145" :
+    "Introduction a la Calculabilite et a la Complexite" :
         {
-            "name" : "Introduction a la Calculabilite et a la Complexite",
+            "name" : "Introduction a la Calculabilite et a la Complexite (IFA6E145)",
+            "groups" : "E145",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Friday"]]
         },
-    "E175" :
+    "Initiation a la Mediation Scientifique" :
         {
-            "name" : "Initiation a la Mediation Scientifique",
+            "name" : "Initiation a la Mediation Scientifique (IFA6E175)",
+            "groups" : "E175",
             "year" : "L3",
             "parcours": "info",
             "choice" : [["Friday"]]
