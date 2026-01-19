@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true },
     preferences: {
         group: {type: String},
-        options: [String]
+        subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Subject' }]
     }
 });
 

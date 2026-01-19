@@ -1,0 +1,28 @@
+{
+    "MathInfo" :
+    {
+        "L3" : [
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.1", "name" : "Statistiques et simulations probabilistes"},
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.3", "name" : "Statistiques et simulations probabilistes"},
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.2 ", "name" : "Optimisation"},
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.1", "name" : "Fonctions holomorphes"},
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.1", "name" : "Geometrie affine et euclidienne"},
+            {"parcours" : "math", "year" : "L3", "groups" : "Math.2 ", "name" : "Geometrie affine et euclidienne"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO1", "name" : "Bases de Donnees"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO2", "name" : "Bases de Donnees"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO3", "name" : "Bases de Donnees"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO4", "name" : "Bases de Donnees"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO5", "name" : "Bases de Donnees"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO1", "name" : "Grammaires et Analyse Syn"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO2", "name" : "Grammaires et Analyse Syn"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO3", "name" : "Grammaires et Analyse Syn"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO4", "name" : "Grammaires et Analyse Syn"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO5", "name" : "Grammaires et Analyse Syn"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO1", "name" : "Programmation Reseaux"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO2", "name" : "Programmation Reseaux"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO3", "name" : "Programmation Reseaux"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO4", "name" : "Programmation Reseaux"},
+            {"parcours" : "info", "year" : "L3", "groups" : "INFO5", "name" : "Programmation Reseaux"}
+        ]
+    }
+}

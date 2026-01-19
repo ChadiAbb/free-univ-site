@@ -3,11 +3,11 @@ const User = require("../models/User");
 
 const updatePreferences = async (req, res) => {
     const userId = req.user.id;
-    const {group, options} = req.body;
+    const {group, subjects} = req.body;
 
     try {
         const newUser = await User.findByIdAndUpdate(userId, 
-            {preferences: {group : group, options: options}}, {new : true})
+            {preferences: {group : group, subjects: subjects}}, {new : true})
 
         res.json({ message: "Préférences mises à jour", user: newUser });
     } catch (error) {
