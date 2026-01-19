@@ -21,7 +21,14 @@ const register = async (req, res) => {
 
         await newUser.save();
 
-        res.status(201).json({ message: "Compte créé avec succès !" });
+        const payload = { id: newUser._id };
+        const token = jsonwebtoken.sign(payload, process.env.JWT_SECRET, 
+            {expiresIn: '1d'});
+
+        res.status(201).json({ 
+                message: "Connexion réussie", 
+                token: token 
+            });
     } catch (error) {
         res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
