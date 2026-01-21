@@ -27,9 +27,9 @@ function draw_event(event,schedule_start,schedule_end){
 
     /* Name */
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    text.setAttribute("width", "100%");
+    text.setAttribute("width", w);
     text.setAttribute("height", "100%");
-    text.setAttribute("viewBox", `0 0 100% 100%`);
+    text.setAttribute("viewBox", "0 0 " + w + " " + h);
     text.setAttribute("x",x + 5);
     text.setAttribute("y",y + 10);
     set_font(text,width);
@@ -37,9 +37,9 @@ function draw_event(event,schedule_start,schedule_end){
 
     /* Room */
     const room = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    room.setAttribute("width", "100%");
+    room.setAttribute("width", w);
     room.setAttribute("height", "100%");
-    room.setAttribute("viewBox", `0 0 100% 100%`);
+    room.setAttribute("viewBox", "0 0 " + w + " " + h);
     room.setAttribute("x",x + 5);
     room.setAttribute("y",y + 10 + textHeight);
     set_font(room,width);
@@ -47,7 +47,7 @@ function draw_event(event,schedule_start,schedule_end){
 
     /* time */
     const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    t.setAttribute("width", "100%");
+    t.setAttribute("width", w);
     t.setAttribute("height", "100%");
     t.setAttribute("viewBox", `0 0 100% 100%`);
     t.setAttribute("x",x + 5);
