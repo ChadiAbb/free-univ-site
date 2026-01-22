@@ -16,10 +16,12 @@
             overflow: auto; min-height: 100%;
             height: 100vh;
         }
-
         article {
-            display: none;
+            position: absolute;
             background: red;
+        }
+        #beforeTable {
+            display:flex;
         }
         #table {
             width: 100%;
@@ -58,11 +60,26 @@
     <title>Document</title>
 </head>
 <body width="100%" >
+        <div>
+            <button id="before">avant</button>
+            <button id="after">après</button>
+        </div>
+        <div id="beforeTable">
+        </div>
         <nav id="navbar"></nav>
         <div width="90%" height="80%" id="table">
         </div>
     <script>
-        
+        today = getMonday();
+        document.getElementById("before").addEventListener("click", () => {
+            today.setDate(today.getDate() - 7);
+            draw_table();
+        })
+        document.getElementById("after").addEventListener("click", () => {
+            today.setDate(today.getDate() + 7);
+            draw_table();
+        })
+
         window.addEventListener('resize', debounce(function() {
             draw_table();
             draw_event(
