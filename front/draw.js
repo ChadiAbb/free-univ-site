@@ -1,3 +1,4 @@
+var today;
 function draw_event(event, schedule_start, schedule_end) {
     if (event.startDate <= schedule_start || event.endDate >= schedule_end) {
         console.log("error");
@@ -26,7 +27,6 @@ function draw_event(event, schedule_start, schedule_end) {
     eventBox.style.backgroundColor = "#c4cb3cff";
     eventBox.style.color = "#000000";
     eventBox.style.padding = "5px";
-    eventBox.style.marginLeft = "5px";
     eventBox.style.boxSizing = "border-box";
     eventBox.style.overflow = "hidden";
     eventBox.style.borderRadius = "5%";
@@ -39,13 +39,15 @@ function draw_event(event, schedule_start, schedule_end) {
         article.style.position ="relative";
         article.style.top = 100 + "px";
         article.style.left = 100 + "px";
-        table.parentNode.insertBefore(article,table);
+        document.getElementById("beforeTable").appendChild(article);
+        //table.parentNode.insertBefore(article,table);
     })
     /* Name */
     const nameDiv = document.createElement("div");
     nameDiv.style.fontFamily = "Arial";
     nameDiv.style.fontSize = (15 * height / 750) + "px";
     nameDiv.textContent = event.name;
+    nameDiv.style.paddingLeft = "5px";
 
     /* Room */
     const roomDiv = document.createElement("div");
@@ -53,6 +55,7 @@ function draw_event(event, schedule_start, schedule_end) {
     roomDiv.style.fontSize = (15 * height / 750) + "px";
     roomDiv.style.marginTop = "5px";
     roomDiv.textContent = event.location;
+    roomDiv.style.paddingLeft = "5px";
 
     /* time */
     const timeDiv = document.createElement("div");
@@ -63,6 +66,7 @@ function draw_event(event, schedule_start, schedule_end) {
     const end = event.EndDate;
     const val = start.Hour + "h" + start.Minute + "-" + end.Hour + "h" + end.Minute;
     timeDiv.textContent = val;
+    timeDiv.style.paddingLeft = "5px";
 
     eventBox.appendChild(nameDiv);
     eventBox.appendChild(roomDiv);
@@ -86,6 +90,10 @@ function getTextHeight(text, fontSize, fontFamily, width) {
     document.body.removeChild(tempElement);
 
     return height;
+}
+
+function clearTable(){
+    document.getElementById("table").removeChild(document.getElementById("table-content"));
 }
 
 function getMonday(gap) {
@@ -113,11 +121,7 @@ function draw_table() {
 
     // Jours de la semaine
     var jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-
-    const aujourdHui = new Date();
-    const jourActuel = aujourdHui.getDay();
-    const diffLundi = aujourdHui.getDate() - jourActuel + (jourActuel === 0 ? -6 : 1);
-    const lundi = new Date(aujourdHui.setDate(diffLundi));
+    const lundi = today;
 
     // Générer les dates pour chaque jour de la semaine
     jours = jours.map((jour, index) => {
@@ -142,6 +146,7 @@ function draw_table() {
     tableElement.style.position = "absolute";
     tableElement.style.top = "0";
     tableElement.style.left = "0";
+    tableElement.id = "table-content";
 
     // En-tête avec les jours
     const thead = document.createElement("thead");
