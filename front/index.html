@@ -73,78 +73,19 @@
         today = getMonday();
         document.getElementById("before").addEventListener("click", () => {
             today.setDate(today.getDate() - 7);
+            fetchEvents();
             draw_table();
         })
         document.getElementById("after").addEventListener("click", () => {
             today.setDate(today.getDate() + 7);
-            draw_table();
+            fetchEvents();
+            update();
         })
 
         window.addEventListener('resize', debounce(function() {
-            draw_table();
-            draw_event(
-                {
-                "startDate": "20260121T080000",
-                "endDate": "20260121T093000",
-                "StartDate": {
-                    "Year": "2026",
-                    "Month": "01",
-                    "Day": "27",
-                    "Hour": "8",
-                    "Minute": "00",
-                    "Seconde": "00"
-                },
-                "EndDate": {
-                    "Year": "2026",
-                    "Month": "01",
-                    "Day": "27",
-                    "Hour": "9",
-                    "Minute": "30",
-                    "Seconde": "00"
-                },
-                "location": "1014_Germain (30p)",
-                "summary": "Logique TD02",
-                "name": "Logique",
-                "groups": "MathInfo1",
-                "year": "L3",
-                "dayOfTheWeek": "Tuesday",
-                "type": "TD",
-                "parcours": "mathinfo",
-                "duration": 1.5
-            },"20260119T000000","20260124T235959");
+            update();
         }, 100));
-        
-        draw_table(); draw_event(
-        {
-        "startDate": "20260121T080000",
-        "endDate": "20260121T173000",
-        "StartDate": {
-            "Year": "2026",
-            "Month": "01",
-            "Day": "27",
-            "Hour": "08",
-            "Minute": "00",
-            "Seconde": "00"
-        },
-        "EndDate": {
-            "Year": "2026",
-            "Month": "01",
-            "Day": "27",
-            "Hour": "9",
-            "Minute": "30",
-            "Seconde": "00"
-        },
-        "location": "1014_Germain (30p)",
-        "summary": "Logique TD02",
-        "name": "Logique",
-        "groups": "MathInfo1",
-        "year": "L3",
-        "dayOfTheWeek": "Tuesday",
-        "type": "TD",
-        "parcours": "mathinfo",
-        "duration": 1.5
-    },"20260119T000000","20260124T235959"
-        );
+        update();
     </script>
 </body>
 </html>

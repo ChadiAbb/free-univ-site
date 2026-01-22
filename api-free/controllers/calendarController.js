@@ -10,7 +10,7 @@ const getUserCalendar = async (req, res) => {
         const results = await Promise.all(preferences.subjects.map(async subjectId => {
             const subject = await Subject.findById(subjectId.toString());
             if (!subject) throw new Error(`Subject ${subjectId} not found`);
-            const url = `${process.env.CALENDAR_URI}/events?name=${subject.name}&year=${subject.year}&groups=${subject.groups}`;
+            const url = `${process.env.CALENDAR_URI}/events?names=${subject.name}&year=${subject.year}&groups=${subject.groups}`;
             const resp = await fetch(url);
             if (!resp.ok) throw new Error(`Calendar API error ${resp.status}`);
             return resp.json();

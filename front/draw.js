@@ -1,4 +1,73 @@
 var today;
+var events = [
+    {
+                "startDate": "20260121T080000",
+                "endDate": "20260121T093000",
+                "StartDate": {
+                    "Year": "2026",
+                    "Month": "01",
+                    "Day": "27",
+                    "Hour": "8",
+                    "Minute": "00",
+                    "Seconde": "00"
+                },
+                "EndDate": {
+                    "Year": "2026",
+                    "Month": "01",
+                    "Day": "27",
+                    "Hour": "9",
+                    "Minute": "30",
+                    "Seconde": "00"
+                },
+                "location": "1014_Germain (30p)",
+                "summary": "Logique TD02",
+                "name": "Logique",
+                "groups": "MathInfo1",
+                "year": "L3",
+                "dayOfTheWeek": "Tuesday",
+                "type": "TD",
+                "parcours": "mathinfo",
+                "duration": 1.5
+            }
+];
+
+function getFormattedDate(date){
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+
+    return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+}
+
+function fetchEvents(){
+    const token = localStorage.getItem("token");
+    fetch("http://80.247.3.232:8443/api/calendar/me",
+        {
+            method:"GET",
+            headers: {
+                Authorization:token
+            }
+        }
+    )
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+}
+function update(){
+    draw_table();
+    var date = new Date(today);
+    date.setTime(date.getTime() + 7*24*60*60*1000 - 1000);
+    draw_events(events,getFormattedDate(today),getFormattedDate(date));
+}
+function draw_events(events,schedule_start,schedule_end){
+    events.forEach(event => {draw_event(event,schedule_start,schedule_end)})
+}
+
 function draw_event(event, schedule_start, schedule_end) {
     if (event.startDate <= schedule_start || event.endDate >= schedule_end) {
         console.log("error");
