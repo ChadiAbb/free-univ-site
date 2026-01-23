@@ -43,8 +43,9 @@ function getFormattedDate(date){
     return `${year}${month}${day}T${hours}${minutes}${seconds}`;
 }
 
-function fetchEvents(){
-    const token = localStorage.getItem("token");
+async function fetchEvents(){
+    //const token = localStorage.getItem("token");
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzI1NjQ0YTZlYjI5ZjlmZTE3NGQ4ZiIsImlhdCI6MTc2OTEwMDg2OCwiZXhwIjoxNzY5MTg3MjY4fQ.T2GKC7rWi1NFr3PwswUI6fylgiW6S66fjxZPa6B-XL4";
     fetch("http://80.247.3.232:8443/api/calendar/me",
         {
             method:"GET",
@@ -55,7 +56,7 @@ function fetchEvents(){
     )
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        events = data.events;
     })
 }
 function update(){
@@ -65,12 +66,11 @@ function update(){
     draw_events(events,getFormattedDate(today),getFormattedDate(date));
 }
 function draw_events(events,schedule_start,schedule_end){
-    events.forEach(event => {draw_event(event,schedule_start,schedule_end)})
+    events.forEach((event) => {draw_event(event,schedule_start,schedule_end)})
 }
 
 function draw_event(event, schedule_start, schedule_end) {
     if (event.startDate <= schedule_start || event.endDate >= schedule_end) {
-        console.log("error");
         return;
     }
 

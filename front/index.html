@@ -74,7 +74,7 @@
         document.getElementById("before").addEventListener("click", () => {
             today.setDate(today.getDate() - 7);
             fetchEvents();
-            draw_table();
+            update();
         })
         document.getElementById("after").addEventListener("click", () => {
             today.setDate(today.getDate() + 7);
@@ -85,6 +85,7 @@
         window.addEventListener('resize', debounce(function() {
             update();
         }, 100));
+        fetchEvents();
         update();
     </script>
 </body>
