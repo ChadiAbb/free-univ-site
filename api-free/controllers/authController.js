@@ -23,7 +23,7 @@ const register = async (req, res) => {
 
         const payload = { id: newUser._id };
         const token = jsonwebtoken.sign(payload, process.env.JWT_SECRET, 
-            {expiresIn: '1d'});
+            {expiresIn: '14d'});
 
         res.status(201).json({ 
                 message: "Connexion réussie", 
