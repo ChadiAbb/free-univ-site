@@ -44,8 +44,7 @@ function getFormattedDate(date){
 }
 
 async function fetchEvents(){
-    //const token = localStorage.getItem("token");
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzI1NjQ0YTZlYjI5ZjlmZTE3NGQ4ZiIsImlhdCI6MTc2OTEwMDg2OCwiZXhwIjoxNzY5MTg3MjY4fQ.T2GKC7rWi1NFr3PwswUI6fylgiW6S66fjxZPa6B-XL4";
+    const token = localStorage.getItem("token");
     fetch("http://80.247.3.232:8443/api/calendar/me",
         {
             method:"GET",
