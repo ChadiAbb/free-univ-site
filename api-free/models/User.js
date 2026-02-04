@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
     pseudo : { type: String, required: true, unique: true },
     password: { type: String, required: true },
     preferences: {
-        group: {type: String},
+        formation: {type: String},
         subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Subject' }]
     }
 });
