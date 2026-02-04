@@ -4,8 +4,8 @@ const errorMessage = document.getElementById("errorMessage");
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const pseudo = event.pseudo;
-    const password = event.password;
+        const pseudo = document.getElementById("pseudo").value;
+        const password = document.getElementById("password").value;
 
     try {
         const reponse = await fetch("http://80.247.3.232:8443/api/auth/login", 
